@@ -4,5 +4,5 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - with:
-          ref: "main"
+      - name: Use Invalid Environment Variable
+        run: echo $INVALID_VARIABLE
