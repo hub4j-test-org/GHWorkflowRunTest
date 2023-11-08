@@ -1,0 +1,5 @@
+name: Broken Workflow
+on: push
+jobs:
+- name: Build
+   runs-on: ubuntu-latest
