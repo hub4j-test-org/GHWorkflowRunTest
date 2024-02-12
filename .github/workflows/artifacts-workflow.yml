@@ -23,14 +23,17 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Use upload-artifact@v3 to upload the first artifact...
       - name: Upload artifact1
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: artifact1
           path: 'artifact1.txt'
-
+      # ... and upload-artifact@v4 to upload the second one.
+      # These are completely different infrastructure and we need to support both.
+      # See https://github.com/hub4j/github-api/issues/1790 for more context
       - name: Upload artifact2
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: artifact2
           path: 'artifact2.txt'
